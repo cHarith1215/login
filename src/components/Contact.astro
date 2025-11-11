@@ -1,0 +1,81 @@
+---
+import config from '../config.json';
+---
+
+<div class="contact-info">
+    <div class="info-item" title="Email">
+        <i class="fas fa-envelope"></i>
+        <span id="contact-email">{config.contact.email}</span>
+    </div>
+    <div class="info-item" title="Phone">
+        <i class="fas fa-phone"></i>
+        <span id="contact-phone">{config.contact.phone}</span>
+    </div>
+    <div class="info-item" title="Location">
+        <i class="fas fa-map-marker-alt"></i>
+        <span id="contact-location">{config.contact.location}</span>
+    </div>
+</div>
+
+<style>
+    .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 0.6rem 1rem;
+        border-radius: 12px;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.15);
+    }
+
+    .info-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: scale(1.05);
+    }
+
+    .info-item i {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 768px) {
+        .contact-info {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            width: 100%;
+            max-width: 400px;
+        }
+        .info-item {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .info-item {
+            font-size: 0.9rem;
+        }
+        .info-item i {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .info-item {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.85rem;
+        }
+    }
+</style>

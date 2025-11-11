@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BrandInfo from '../components/BrandInfo.astro';
+import Contact from '../components/Contact.astro';
+import Socials from '../components/Socials.astro';
+import config from '../config.json';
+---
+
+<Layout title={config.brandName + ' - login Page'}>
+	<main class="content">
+		<BrandInfo />
+		<Contact />
+		<Socials />
+	</main>
+</Layout>
+
+

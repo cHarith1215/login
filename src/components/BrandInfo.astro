@@ -1,0 +1,160 @@
+---
+import config from '../config.json';
+---
+
+<div class="brand-container">
+    <div class="brand-header">
+        <h1 id="brand-name" class="glassy-text">{config.brandName}</h1>
+        <h2 id="brand-title" class="glassy-text">{config.title}</h2>
+    </div>
+    
+    <div class="description-box">
+        <p id="brand-description">{config.description}</p>
+    </div>
+</div>
+
+<style>
+    .brand-container {
+        text-align: center;
+        max-width: 800px;
+        margin-bottom: 3rem;
+        padding-top: 3rem;
+        animation: floatIn 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .brand-header {
+        margin-top: 2rem;
+        padding-top: 1rem;
+    }
+
+    .glassy-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', serif;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        letter-spacing: -0.5px;
+    }
+
+    #brand-name {
+        font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 3.8rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #fff, #a8b9ff);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: liquidShimmer 5s ease-in-out infinite;
+    }
+
+    #brand-title {
+        font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        opacity: 0.95;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .description-box {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+        backdrop-filter: blur(8px) saturate(150%);
+        -webkit-backdrop-filter: blur(8px) saturate(150%);
+        text-align: center;
+        border-radius: 20px;
+        padding: 2.8rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+        animation: liquidFloat 3s infinite alternate;
+        transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .description-box:hover {
+        transform: translateY(-5px);
+    }
+
+    #brand-description {
+        font-size: 1.7rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
+    }
+
+    @media (max-width: 1024px) {
+        .brand-container { padding-top: 4rem; }
+        .brand-header { padding-top: 1.5rem; }
+        #brand-name { font-size: 3.2rem; }
+        .description-box { max-width: 90%; }
+    }
+
+    @media (max-width: 768px) {
+        .brand-container { padding-top: 5rem; }
+        .brand-header { 
+            margin-top: 2rem; 
+            padding-top: 2rem;
+        }
+        #brand-name { 
+            font-size: 2.8rem;
+            padding-top: 1.5rem;
+        }
+        #brand-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1.5px;
+        }
+        .description-box {
+            padding: 1.2rem;
+            border-radius: 18px;
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .brand-container { padding-top: 6rem; }
+        .brand-header { 
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+        }
+        #brand-name {
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+            padding-top: 2rem;
+        }
+        #brand-title {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .description-box {
+            padding: 1rem;
+            border-radius: 14px;
+            margin-bottom: 1rem;
+        }
+        #brand-description {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .brand-container { padding-top: 7rem; }
+        .brand-header { 
+            margin-top: 3rem;
+            padding-top: 3rem;
+        }
+        #brand-name { 
+            font-size: 2rem;
+            padding-top: 2.5rem;
+        }
+        #brand-title { 
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+    }
+</style>
